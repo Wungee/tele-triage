@@ -1,0 +1,46 @@
+# Local:       docker compose up --build                      -> http://localhost:8000
+# Server:      docker compose --profile https up -d --build   -> https://$DOMAIN (Caddy gets the TLS cert)
+# TimescaleDB: add --profile timescale and set DATABASE_URL in .env (see .env.example)
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - reviews:/app/data
+
+  caddy:
+    image: caddy:2
+    profiles: ["https"]
+    restart: unless-stopped
+    depends_on: [app]
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-:80}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg17
+    profiles: ["timescale"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: alarms
+      POSTGRES_PASSWORD: ${TIMESCALE_PASSWORD:-change-me}
+      POSTGRES_DB: alarms
+    volumes:
+      - tsdata:/var/lib/postgresql/data
+
+volumes:
+  reviews:
+  caddy_data:
+  caddy_config:
+  tsdata:

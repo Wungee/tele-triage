@@ -1,0 +1,10 @@
+# DOMAIN=alarms.example.com -> automatic HTTPS (Let's Encrypt). DOMAIN=:80 -> plain HTTP on the server IP.
+{$DOMAIN} {
+	encode gzip
+	reverse_proxy app:8000
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}

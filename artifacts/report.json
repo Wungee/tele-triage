@@ -1,0 +1,1189 @@
+{
+  "dataset": "PhysioNet/CinC Challenge 2015 training set",
+  "synthetic": false,
+  "created": "2026-10-11T06:51:43+00:00",
+  "n_train": 599,
+  "n_test": 151,
+  "t_low": 0.009847763770969672,
+  "t_high": 0.5,
+  "target_miss": 0.01,
+  "sklearn_version": "1.9.1",
+  "test": {
+    "ALL": {
+      "n": 151,
+      "n_true": 58,
+      "n_false": 93,
+      "auc": 0.9603262884686689,
+      "false_alarms_flagged_artifact": 56,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 48,
+      "uncertain": 42,
+      "pct_false_alarms_flagged": 60.215053763440864,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.8275862068965517,
+        "specificity_false_alarms": 0.946236559139785,
+        "challenge_score": 0.7120418848167539
+      }
+    },
+    "Asystole": {
+      "n": 25,
+      "n_true": 4,
+      "n_false": 21,
+      "auc": 0.9642857142857142,
+      "false_alarms_flagged_artifact": 14,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 3,
+      "uncertain": 7,
+      "pct_false_alarms_flagged": 66.66666666666667,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.75,
+        "specificity_false_alarms": 0.9523809523809523,
+        "challenge_score": 0.7931034482758621
+      }
+    },
+    "Bradycardia": {
+      "n": 18,
+      "n_true": 9,
+      "n_false": 9,
+      "auc": 0.9753086419753086,
+      "false_alarms_flagged_artifact": 4,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 8,
+      "uncertain": 5,
+      "pct_false_alarms_flagged": 44.44444444444444,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.8888888888888888,
+        "specificity_false_alarms": 0.8888888888888888,
+        "challenge_score": 0.7272727272727273
+      }
+    },
+    "Tachycardia": {
+      "n": 28,
+      "n_true": 26,
+      "n_false": 2,
+      "auc": 0.9230769230769231,
+      "false_alarms_flagged_artifact": 0,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 26,
+      "uncertain": 1,
+      "pct_false_alarms_flagged": 0.0,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 1.0,
+        "specificity_false_alarms": 0.5,
+        "challenge_score": 0.9642857142857143
+      }
+    },
+    "Ventricular_Tachycardia": {
+      "n": 68,
+      "n_true": 18,
+      "n_false": 50,
+      "auc": 0.9277777777777778,
+      "false_alarms_flagged_artifact": 33,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 10,
+      "uncertain": 24,
+      "pct_false_alarms_flagged": 66.0,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.5555555555555556,
+        "specificity_false_alarms": 0.98,
+        "challenge_score": 0.59
+      }
+    },
+    "Ventricular_Flutter_Fib": {
+      "n": 12,
+      "n_true": 1,
+      "n_false": 11,
+      "auc": 1.0,
+      "false_alarms_flagged_artifact": 5,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 1,
+      "uncertain": 5,
+      "pct_false_alarms_flagged": 45.45454545454545,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 1.0,
+        "specificity_false_alarms": 0.9090909090909091,
+        "challenge_score": 0.9166666666666666
+      }
+    }
+  },
+  "cv": {
+    "ALL": {
+      "n": 599,
+      "n_true": 236,
+      "n_false": 363,
+      "auc": 0.9599850585983097,
+      "false_alarms_flagged_artifact": 190,
+      "true_alarms_flagged_artifact": 2,
+      "true_alarms_marked_likely_real": 210,
+      "uncertain": 163,
+      "pct_false_alarms_flagged": 52.34159779614325,
+      "pct_true_alarms_flagged": 0.847457627118644,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.8898305084745762,
+        "specificity_false_alarms": 0.90633608815427,
+        "challenge_score": 0.7667140825035562
+      }
+    },
+    "Asystole": {
+      "n": 97,
+      "n_true": 18,
+      "n_false": 79,
+      "auc": 0.9528832630098454,
+      "false_alarms_flagged_artifact": 44,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 16,
+      "uncertain": 31,
+      "pct_false_alarms_flagged": 55.69620253164557,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.8888888888888888,
+        "specificity_false_alarms": 0.9240506329113924,
+        "challenge_score": 0.8476190476190476
+      }
+    },
+    "Bradycardia": {
+      "n": 71,
+      "n_true": 37,
+      "n_false": 34,
+      "auc": 0.9721780604133545,
+      "false_alarms_flagged_artifact": 15,
+      "true_alarms_flagged_artifact": 1,
+      "true_alarms_marked_likely_real": 34,
+      "uncertain": 18,
+      "pct_false_alarms_flagged": 44.11764705882353,
+      "pct_true_alarms_flagged": 2.7027027027027026,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.918918918918919,
+        "specificity_false_alarms": 0.9117647058823529,
+        "challenge_score": 0.7831325301204819
+      }
+    },
+    "Tachycardia": {
+      "n": 112,
+      "n_true": 105,
+      "n_false": 7,
+      "auc": 0.9972789115646259,
+      "false_alarms_flagged_artifact": 0,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 105,
+      "uncertain": 4,
+      "pct_false_alarms_flagged": 0.0,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 1.0,
+        "specificity_false_alarms": 0.5714285714285714,
+        "challenge_score": 0.9732142857142857
+      }
+    },
+    "Ventricular_Tachycardia": {
+      "n": 273,
+      "n_true": 71,
+      "n_false": 202,
+      "auc": 0.9223957607028309,
+      "false_alarms_flagged_artifact": 110,
+      "true_alarms_flagged_artifact": 1,
+      "true_alarms_marked_likely_real": 53,
+      "uncertain": 89,
+      "pct_false_alarms_flagged": 54.45544554455446,
+      "pct_true_alarms_flagged": 1.408450704225352,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.7464788732394366,
+        "specificity_false_alarms": 0.900990099009901,
+        "challenge_score": 0.6811594202898551
+      }
+    },
+    "Ventricular_Flutter_Fib": {
+      "n": 46,
+      "n_true": 5,
+      "n_false": 41,
+      "auc": 0.751219512195122,
+      "false_alarms_flagged_artifact": 21,
+      "true_alarms_flagged_artifact": 0,
+      "true_alarms_marked_likely_real": 2,
+      "uncertain": 21,
+      "pct_false_alarms_flagged": 51.21951219512195,
+      "pct_true_alarms_flagged": 0.0,
+      "at_0.5": {
+        "sensitivity_true_alarms": 0.4,
+        "specificity_false_alarms": 0.9512195121951219,
+        "challenge_score": 0.7068965517241379
+      }
+    }
+  },
+  "top_features": [
+    {
+      "feature": "type_Tachycardia",
+      "importance": 0.08796811271783464
+    },
+    {
+      "feature": "ecg_b_bas",
+      "importance": 0.015294771968854249
+    },
+    {
+      "feature": "ecg_a_hr_late",
+      "importance": 0.0075454208379680645
+    },
+    {
+      "feature": "ecg_a_vf_frac_late",
+      "importance": 0.007489803485354029
+    },
+    {
+      "feature": "ecg_min_max_gap",
+      "importance": 0.007063403781979905
+    },
+    {
+      "feature": "ecg_a_min_hr5",
+      "importance": 0.006915090841675897
+    },
+    {
+      "feature": "abp_rr_cv",
+      "importance": 0.0060066740823136455
+    },
+    {
+      "feature": "ecg_a_tsqi",
+      "importance": 0.00509825732295135
+    },
+    {
+      "feature": "ecg_a_dom_freq",
+      "importance": 0.0029106414534668225
+    },
+    {
+      "feature": "ecg_b_max_gap",
+      "importance": 0.002484241750092675
+    },
+    {
+      "feature": "ecg_b_dom_freq",
+      "importance": 0.0021134593993326067
+    },
+    {
+      "feature": "ecg_a_amp",
+      "importance": 0.0020763811642565354
+    },
+    {
+      "feature": "ecg_leads_match",
+      "importance": 0.0017797552836484542
+    },
+    {
+      "feature": "ecg_min_vf_frac_late",
+      "importance": 0.0017612161661104797
+    },
+    {
+      "feature": "ecg_b_vf_frac",
+      "importance": 0.001724137931034464
+    }
+  ],
+  "test_predictions": [
+    {
+      "record": "v360s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0006282352766541277
+    },
+    {
+      "record": "b824s",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.9140793096682228
+    },
+    {
+      "record": "v399l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.2203440476676988
+    },
+    {
+      "record": "v532s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.37134051544972213
+    },
+    {
+      "record": "v146s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.005014840672692879
+    },
+    {
+      "record": "a712s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.00824947051049095
+    },
+    {
+      "record": "t665l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9982866803473662
+    },
+    {
+      "record": "t777l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9848446807093295
+    },
+    {
+      "record": "t411l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9985474072315947
+    },
+    {
+      "record": "t112s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9924747072374505
+    },
+    {
+      "record": "v833l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0014415615200655577
+    },
+    {
+      "record": "b832s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.15927362178481927
+    },
+    {
+      "record": "v574s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.7175582242748719
+    },
+    {
+      "record": "b681l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.0005718996749703874
+    },
+    {
+      "record": "a372s",
+      "alarm_type": "Asystole",
+      "y": 1,
+      "p_true": 0.975787172106084
+    },
+    {
+      "record": "v781l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0023448129111668064
+    },
+    {
+      "record": "f352s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.005163123524119189
+    },
+    {
+      "record": "v291l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0049646068663724355
+    },
+    {
+      "record": "v579l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.9157638390744641
+    },
+    {
+      "record": "v437l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.00023769281164015272
+    },
+    {
+      "record": "v147l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.00030722788766942573
+    },
+    {
+      "record": "a420s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.019049521690085253
+    },
+    {
+      "record": "a639l",
+      "alarm_type": "Asystole",
+      "y": 1,
+      "p_true": 0.8011100223935356
+    },
+    {
+      "record": "a654s",
+      "alarm_type": "Asystole",
+      "y": 1,
+      "p_true": 0.7347331884921551
+    },
+    {
+      "record": "t284s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9985761058692855
+    },
+    {
+      "record": "v481l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.000804954680716281
+    },
+    {
+      "record": "f474s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.03214851380562333
+    },
+    {
+      "record": "v721l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0019667740407656666
+    },
+    {
+      "record": "a363l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0006251622763948801
+    },
+    {
+      "record": "t709l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9957106087395994
+    },
+    {
+      "record": "a378s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.01962414743177606
+    },
+    {
+      "record": "a443l",
+      "alarm_type": "Asystole",
+      "y": 1,
+      "p_true": 0.09307453882965706
+    },
+    {
+      "record": "v663l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0021269011934800753
+    },
+    {
+      "record": "t677l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.995356976642214
+    },
+    {
+      "record": "b265l",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9935576285092812
+    },
+    {
+      "record": "v597l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.376053627448517
+    },
+    {
+      "record": "v133l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.3851177973930283
+    },
+    {
+      "record": "v674s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.21056809132124185
+    },
+    {
+      "record": "f500s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.0005701965505436228
+    },
+    {
+      "record": "v400s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.001587477340064971
+    },
+    {
+      "record": "t249l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9952463820532454
+    },
+    {
+      "record": "a810s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.9346589345745488
+    },
+    {
+      "record": "f799l",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.002685975581647677
+    },
+    {
+      "record": "v355l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.003584470791588233
+    },
+    {
+      "record": "v140s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.010376020199910659
+    },
+    {
+      "record": "b388s",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.49246910239649105
+    },
+    {
+      "record": "v232s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.008530097253487112
+    },
+    {
+      "record": "a152s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0012690213302029554
+    },
+    {
+      "record": "v275l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.078745333509618
+    },
+    {
+      "record": "a391l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.030202968016203587
+    },
+    {
+      "record": "v756s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.493145775334946
+    },
+    {
+      "record": "a273l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0058438821741605956
+    },
+    {
+      "record": "t821l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9992541485352651
+    },
+    {
+      "record": "t589l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.7643445531253605
+    },
+    {
+      "record": "t384s",
+      "alarm_type": "Tachycardia",
+      "y": 0,
+      "p_true": 0.2351360566250691
+    },
+    {
+      "record": "t469l",
+      "alarm_type": "Tachycardia",
+      "y": 0,
+      "p_true": 0.9561125230842135
+    },
+    {
+      "record": "v338s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0003859500421080147
+    },
+    {
+      "record": "v552s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0015676488235298262
+    },
+    {
+      "record": "v319l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0001355880465019793
+    },
+    {
+      "record": "v845l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.01138621590755403
+    },
+    {
+      "record": "v323l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.17622923982941588
+    },
+    {
+      "record": "v366s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0006934087721618762
+    },
+    {
+      "record": "b835l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.0006376346268836638
+    },
+    {
+      "record": "b730s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9423694020658985
+    },
+    {
+      "record": "v354s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.016293843575801752
+    },
+    {
+      "record": "v729l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.6623036311370882
+    },
+    {
+      "record": "t739l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9977985767721147
+    },
+    {
+      "record": "v733l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.8320092204803904
+    },
+    {
+      "record": "v666s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.000227284025157667
+    },
+    {
+      "record": "f415l",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.21873616732023468
+    },
+    {
+      "record": "b349l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.04325947383092189
+    },
+    {
+      "record": "b669l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.0077946018294086684
+    },
+    {
+      "record": "v221l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.7978660799532253
+    },
+    {
+      "record": "v369l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.9854249535295796
+    },
+    {
+      "record": "v347l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0004931355226078703
+    },
+    {
+      "record": "b838s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.998161538483376
+    },
+    {
+      "record": "v732s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.005435941576937209
+    },
+    {
+      "record": "v635l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.9140415247589168
+    },
+    {
+      "record": "t747l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9989298924054358
+    },
+    {
+      "record": "a465l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.009691516703799873
+    },
+    {
+      "record": "v660s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.01696025165976684
+    },
+    {
+      "record": "v459l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.06543596350955437
+    },
+    {
+      "record": "v630s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.06736465017681977
+    },
+    {
+      "record": "f563l",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 1,
+      "p_true": 0.9417521723788341
+    },
+    {
+      "record": "v139l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.1768209111469989
+    },
+    {
+      "record": "t394s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9977780455266102
+    },
+    {
+      "record": "b497l",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9756733332228572
+    },
+    {
+      "record": "v718s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.9878996045631778
+    },
+    {
+      "record": "t707l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9973362427372373
+    },
+    {
+      "record": "a667l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.05321780238250643
+    },
+    {
+      "record": "t565l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9978068426693895
+    },
+    {
+      "record": "t350s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9984745091022129
+    },
+    {
+      "record": "a735l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0012051272927158156
+    },
+    {
+      "record": "v127l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.002439443527196173
+    },
+    {
+      "record": "a310s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0005563225210731845
+    },
+    {
+      "record": "t520s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9544008046737984
+    },
+    {
+      "record": "b516s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9732802710367815
+    },
+    {
+      "record": "f321l",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.9071201071505332
+    },
+    {
+      "record": "b485l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.018363344431533944
+    },
+    {
+      "record": "v373l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.020396122175405276
+    },
+    {
+      "record": "b617l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.011652730411901223
+    },
+    {
+      "record": "v783l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.5588831454650995
+    },
+    {
+      "record": "t577l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9988680268597885
+    },
+    {
+      "record": "a606s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.005124261595517886
+    },
+    {
+      "record": "v432s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.00038565027059503723
+    },
+    {
+      "record": "b764s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.977297468319759
+    },
+    {
+      "record": "a267l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.009619782187273593
+    },
+    {
+      "record": "a461l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.004052698363707343
+    },
+    {
+      "record": "v805l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.0739817958118928
+    },
+    {
+      "record": "v623l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0012472663428557981
+    },
+    {
+      "record": "v204s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0005981572946897359
+    },
+    {
+      "record": "v638s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.6581368625337536
+    },
+    {
+      "record": "a650s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0005563768832916914
+    },
+    {
+      "record": "t434s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9890895807192547
+    },
+    {
+      "record": "b331l",
+      "alarm_type": "Bradycardia",
+      "y": 0,
+      "p_true": 0.0005261123472184864
+    },
+    {
+      "record": "a439l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.007074786599321295
+    },
+    {
+      "record": "t320s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9333255245751054
+    },
+    {
+      "record": "v312s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.006732211538854553
+    },
+    {
+      "record": "v844s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.056564271493222726
+    },
+    {
+      "record": "f602s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.02197048912270201
+    },
+    {
+      "record": "v460s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.10905285005020644
+    },
+    {
+      "record": "v405l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.00786946054395173
+    },
+    {
+      "record": "v361l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.014621871560590074
+    },
+    {
+      "record": "f144s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.002695462105527404
+    },
+    {
+      "record": "t214s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9954569966979097
+    },
+    {
+      "record": "t276s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9993000835102477
+    },
+    {
+      "record": "v815l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.07593862313204362
+    },
+    {
+      "record": "a422s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.08150844328789607
+    },
+    {
+      "record": "v166s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0025129350391198714
+    },
+    {
+      "record": "v303l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.09275179053578383
+    },
+    {
+      "record": "b561l",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9972816428397826
+    },
+    {
+      "record": "v628s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 1,
+      "p_true": 0.9621127135476754
+    },
+    {
+      "record": "t567l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9986401049432098
+    },
+    {
+      "record": "t107l",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9991741320784957
+    },
+    {
+      "record": "v295l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.005253823169657602
+    },
+    {
+      "record": "a123l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.03144691588448969
+    },
+    {
+      "record": "v570s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.0060011524626130165
+    },
+    {
+      "record": "f586s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.0013577448863660523
+    },
+    {
+      "record": "v473l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.14164799162987876
+    },
+    {
+      "record": "t546s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.9884212501322277
+    },
+    {
+      "record": "v643l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.01827951547797053
+    },
+    {
+      "record": "b794s",
+      "alarm_type": "Bradycardia",
+      "y": 1,
+      "p_true": 0.9878196245255929
+    },
+    {
+      "record": "f408s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.011559665429752017
+    },
+    {
+      "record": "v557l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.005408081861659524
+    },
+    {
+      "record": "v169l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.000896911540440297
+    },
+    {
+      "record": "a584s",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.0007864496930787872
+    },
+    {
+      "record": "f346s",
+      "alarm_type": "Ventricular_Flutter_Fib",
+      "y": 0,
+      "p_true": 0.026125933374245274
+    },
+    {
+      "record": "v115l",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.001288086470383057
+    },
+    {
+      "record": "v364s",
+      "alarm_type": "Ventricular_Tachycardia",
+      "y": 0,
+      "p_true": 0.008986151270548923
+    },
+    {
+      "record": "t430s",
+      "alarm_type": "Tachycardia",
+      "y": 1,
+      "p_true": 0.869877354449167
+    },
+    {
+      "record": "a103l",
+      "alarm_type": "Asystole",
+      "y": 0,
+      "p_true": 0.00046051771869549745
+    }
+  ]
+}

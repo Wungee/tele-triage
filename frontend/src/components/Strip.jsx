@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
-import { TRACE, scaleFor, setupCanvas } from "../waveform.js";
+import { ALARM_RED, INK, TRACE, scaleFor, setupCanvas } from "../waveform.js";
 
 // A full-width rhythm strip for one channel, with the co-pilot's beat marks drawn above the
 // trace and the 16 s it analysed shaded. Beat marks are the point: a tech can see at a glance
@@ -23,7 +23,7 @@ export default function Strip({ ch, wf, from, to, alarmT, windowS, highlighted }
       ctx.clearRect(0, 0, width, height);
 
       // 1-second grid, the way strips are read
-      ctx.strokeStyle = "rgba(120,140,160,0.13)";
+      ctx.strokeStyle = "rgba(201,208,213,0.08)";
       ctx.lineWidth = 1;
       for (let t = Math.ceil(from); t <= to; t++) {
         ctx.beginPath();
@@ -32,7 +32,7 @@ export default function Strip({ ch, wf, from, to, alarmT, windowS, highlighted }
         ctx.stroke();
       }
       // analysed window
-      ctx.fillStyle = "rgba(185,167,255,0.07)";
+      ctx.fillStyle = "rgba(237,230,214,0.05)";
       ctx.fillRect(X(windowS[0]), 0, X(windowS[1]) - X(windowS[0]), height);
 
       // trace
@@ -57,7 +57,7 @@ export default function Strip({ ch, wf, from, to, alarmT, windowS, highlighted }
       ctx.stroke();
 
       // co-pilot beat marks
-      ctx.strokeStyle = "#b9a7ff";
+      ctx.strokeStyle = INK;
       ctx.lineWidth = 2;
       for (const b of ch.beats_s) {
         if (b < from || b > to) continue;
@@ -67,7 +67,7 @@ export default function Strip({ ch, wf, from, to, alarmT, windowS, highlighted }
         ctx.stroke();
       }
       // alarm marker
-      ctx.strokeStyle = "#ff2d3d";
+      ctx.strokeStyle = ALARM_RED;
       ctx.setLineDash([4, 3]);
       ctx.beginPath();
       ctx.moveTo(X(alarmT) - 1, 0);

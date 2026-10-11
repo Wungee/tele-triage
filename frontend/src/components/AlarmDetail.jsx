@@ -38,7 +38,7 @@ export default function AlarmDetail({ bed, onClose, onReviewed }) {
   };
 
   const explain = async () => {
-    setSummary({ text: "Writing summary…", source: "" });
+    setSummary("loading");
     try {
       setSummary(await api.summary(data.id));
     } catch (e) {
@@ -56,13 +56,14 @@ export default function AlarmDetail({ bed, onClose, onReviewed }) {
           <span className="detail__bed">Bed {bed.label}</span>
           <span className="detail__alarm">*** {ALARM_TEXT[data.alarm_type]}</span>
         </div>
-        <button ref={closeRef} className="btn btn--ghost" onClick={onClose}>
+        <button ref={closeRef} className="btn" onClick={onClose}>
           Back to wall
         </button>
       </header>
 
       <div className="detail__grid">
         <div className="detail__strips">
+          <div className="detail__stack">
           {wf.channels
             .filter((c) => c.kind !== "resp")
             .map((ch) => (
@@ -77,6 +78,7 @@ export default function AlarmDetail({ bed, onClose, onReviewed }) {
                 highlighted={hl === ch.name}
               />
             ))}
+          </div>
           <p className="detail__legend">
             <span className="tick" /> beats the co-pilot found
             <span className="shade" /> the 16 s it analysed
@@ -105,22 +107,34 @@ export default function AlarmDetail({ bed, onClose, onReviewed }) {
                 tabIndex={0}
               >
                 <span className="reason__tag">
-                  {r.toward === "artifact" ? "Points to artifact" : r.toward === "real" ? "Points to real" : "Note"}
+                  {r.toward === "artifact" ? "Points to artifact" : r.toward === "real" ? "Points to a real alarm" : "Note"}
                 </span>
-                {r.text}
+                <span className="reason__text">{r.text}</span>
               </li>
             ))}
-            {!data.reasons.length && <li className="reason">No single signal stands out. Read the strip.</li>}
+            {!data.reasons.length && (
+              <li className="reason">
+                <span className="reason__text">No single signal stands out. Read the strip.</span>
+              </li>
+            )}
           </ul>
 
           <div className="summary">
-            {summary ? (
-              <p>
+            {summary === "loading" ? (
+              <div aria-label="Writing summary" role="status">
+                <span className="skel" />
+                <span className="skel" />
+                <span className="skel skel--short" />
+              </div>
+            ) : summary ? (
+              <p className="summary__text">
                 {summary.text}
-                {summary.source && <small> Source: {summary.source.startsWith("gemini") ? "Gemini" : "rule template"}</small>}
+                {summary.source && (
+                  <small>Written by {summary.source.startsWith("gemini") ? "Gemini" : "a rule template"}</small>
+                )}
               </p>
             ) : (
-              <button className="btn btn--ghost" onClick={explain}>
+              <button className="btn" onClick={explain}>
                 Summarize in plain English
               </button>
             )}
@@ -153,7 +167,7 @@ export default function AlarmDetail({ bed, onClose, onReviewed }) {
                   ? "The co-pilot matched the experts."
                   : "The co-pilot got this one wrong."}
               </p>
-              <button className="btn btn--ghost" onClick={onClose}>
+              <button className="btn" onClick={onClose}>
                 Back to wall
               </button>
             </div>

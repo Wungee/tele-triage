@@ -156,4 +156,11 @@ async def score_upload(header: UploadFile = File(..., description=".hea file"),
 
 # ------------------------------------------------------------- static UI
 if config.FRONTEND_DIST.exists():
+    from fastapi.responses import FileResponse
+
+    @app.get("/terms", include_in_schema=False)
+    @app.get("/privacy", include_in_schema=False)
+    def legal_page():  # client-side pages: serve the app shell, React picks the page from the URL
+        return FileResponse(config.FRONTEND_DIST / "index.html")
+
     app.mount("/", StaticFiles(directory=str(config.FRONTEND_DIST), html=True), name="ui")

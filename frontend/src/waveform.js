@@ -1,10 +1,13 @@
 // Shared waveform helpers: colours follow bedside-monitor convention so a tech reads them instantly.
 export const TRACE = {
-  ecg: "#39e75f",
-  pleth: "#2fd6f0",
-  abp: "#ff4d5e",
-  resp: "#f5d547",
+  ecg: "#5fcf78",
+  pleth: "#4dbfd6",
+  abp: "#e0575f",
+  resp: "#d9c25a",
 };
+
+export const INK = "#ede6d6"; // the co-pilot's colour: warm paper white, never a monitor colour
+export const ALARM_RED = "#e0303c";
 
 export const VERDICT = {
   likely_artifact: { label: "Likely artifact", rank: 2 },

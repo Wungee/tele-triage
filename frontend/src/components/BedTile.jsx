@@ -99,9 +99,34 @@ export default function BedTile({ bed, getRecordTime, selected, onOpen }) {
       </div>
       {fired && !reviewed && verdict && (
         <div className={`ai-chip ai-chip--${verdict}`}>
-          <span className="ai-chip__who">Co-pilot</span> {VERDICT[verdict].label}
+          <span className="ai-chip__who">Co-pilot</span>
+          <span className="ai-chip__say">{VERDICT[verdict].label}</span>
         </div>
       )}
     </button>
+  );
+}
+
+// Placeholder while a bed's data loads: a monitor with no signal yet (flat dashed baseline, "--").
+export function BedSkeleton({ label }) {
+  return (
+    <div className="bed bed--skeleton" aria-hidden="true">
+      <div className="bed__head">
+        <span className="bed__no">{label}</span>
+      </div>
+      <div className="bed__body">
+        <div className="bed__trace" />
+        <div className="bed__nums">
+          <div className="num num--none">
+            <small>HR</small>
+            <span>--</span>
+          </div>
+          <div className="num num--none">
+            <small>PR</small>
+            <span>--</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

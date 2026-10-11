@@ -1,7 +1,7 @@
 import { ALARM_TEXT, VERDICT, fmtClock } from "../waveform.js";
 
-// Active alarms, ordered by the co-pilot: likely-real first, likely-artifact last.
-// Nothing is removed. The order is the only thing the AI changes.
+// Open alarms, numbered in the order the co-pilot suggests reviewing them: likely-real first,
+// likely-artifact last. Nothing is removed; the order is the only thing the AI changes.
 export default function Queue({ beds, now, onOpen, selectedId }) {
   const active = beds
     .filter((b) => b.fired && !b.review && b.data)
@@ -12,21 +12,20 @@ export default function Queue({ beds, now, onOpen, selectedId }) {
   return (
     <aside className="queue" aria-label="Alarm queue">
       <h2 className="queue__h">
-        Alarm queue <span>{active.length}</span>
+        Open alarms <span>{active.length}</span>
       </h2>
-      <p className="queue__sub">Sorted by the co-pilot. Likely-real alarms rise to the top.</p>
-      {!active.length && <p className="queue__empty">No open alarms. Beds are replaying the minute before each alarm.</p>}
+      <p className="queue__sub">In the order the co-pilot suggests. Likely-real alarms come first.</p>
+      {!active.length && (
+        <p className="queue__empty">No open alarms yet. Each bed is replaying the minute before its alarm.</p>
+      )}
       <ol className="queue__list">
         {active.map((b) => (
           <li key={b.key}>
-            <button
-              className={`qrow qrow--${b.data.verdict} ${selectedId === b.key ? "qrow--sel" : ""}`}
-              onClick={() => onOpen(b)}
-            >
+            <button className={`qrow ${selectedId === b.key ? "qrow--sel" : ""}`} onClick={() => onOpen(b)}>
               <span className="qrow__bed">{b.label}</span>
               <span className="qrow__alarm">{ALARM_TEXT[b.data.alarm_type]}</span>
               <span className="qrow__age">{fmtClock((now - b.firedAtWall) / 1000)}</span>
-              <span className={`qrow__ai ai-text--${b.data.verdict}`}>{VERDICT[b.data.verdict].label}</span>
+              <span className={`qrow__ai qrow__ai--${b.data.verdict}`}>{VERDICT[b.data.verdict].label}</span>
             </button>
           </li>
         ))}

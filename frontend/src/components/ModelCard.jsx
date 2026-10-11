@@ -26,7 +26,7 @@ export default function ModelCard({ card, onClose }) {
       <div className="modal__box">
         <header className="modal__head">
           <h2>How well the co-pilot does</h2>
-          <button ref={ref} className="btn btn--ghost" onClick={onClose}>
+          <button ref={ref} className="btn" onClick={onClose}>
             Close
           </button>
         </header>

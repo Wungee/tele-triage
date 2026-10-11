@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api.js";
 import AlarmDetail from "./components/AlarmDetail.jsx";
-import BedTile from "./components/BedTile.jsx";
+import BedTile, { BedSkeleton } from "./components/BedTile.jsx";
 import ModelCard from "./components/ModelCard.jsx";
 import Queue from "./components/Queue.jsx";
 
@@ -31,6 +31,7 @@ export default function App() {
   const [card, setCard] = useState(null);
   const [showCard, setShowCard] = useState(false);
   const [now, setNow] = useState(Date.now());
+  const [expected, setExpected] = useState(N_BEDS);
 
   const sim = useRef(0); // simulated seconds since the wall started
   const pausedRef = useRef(false);
@@ -72,7 +73,10 @@ export default function App() {
   }, []);
 
   // ---- boot -------------------------------------------------------------------
+  const booted = useRef(false);
   useEffect(() => {
+    if (booted.current) return; // React StrictMode runs effects twice in dev
+    booted.current = true;
     (async () => {
       try {
         const h = await api.health();
@@ -90,11 +94,11 @@ export default function App() {
         pool.current = ids;
         const n = Math.min(N_BEDS, ids.length);
         // stagger: first alarm after ~6 s, then one every ~5 s, like a busy night
-        const made = [];
+        setExpected(n);
         for (let i = 0; i < n; i++) {
-          made.push(await makeBed(String(i + 1).padStart(2, "0"), 6 + i * 5));
+          const bed = await makeBed(String(i + 1).padStart(2, "0"), 6 + i * 5);
+          if (bed) setBeds((bs) => [...bs, bed]); // fill the wall bed by bed; skeletons hold the rest
         }
-        setBeds(made.filter(Boolean));
       } catch (e) {
         setError(`Cannot reach the API (${e.message}). Is the backend running on port 8000?`);
       }
@@ -170,10 +174,10 @@ export default function App() {
           </div>
         </dl>
         <div className="top__actions">
-          <button className="btn btn--ghost" onClick={() => setPaused((p) => !p)} aria-pressed={paused}>
+          <button className="btn" onClick={() => setPaused((p) => !p)} aria-pressed={paused}>
             {paused ? "Resume replay" : "Pause replay"}
           </button>
-          <button className="btn btn--ghost" onClick={() => setShowCard(true)} disabled={!card}>
+          <button className="btn" onClick={() => setShowCard(true)} disabled={!card}>
             Model accuracy
           </button>
         </div>
@@ -189,11 +193,23 @@ export default function App() {
             {beds.map((b) => (
               <BedTile key={b.key} bed={b} getRecordTime={getRecordTime} selected={false} onOpen={(x) => setOpenKey(x.key)} />
             ))}
-            {!beds.length && !error && <p className="loading">Loading beds…</p>}
+            {!error &&
+              Array.from({ length: Math.max(0, expected - beds.length) }, (_, i) => (
+                <BedSkeleton key={`sk-${i}`} label={String(beds.length + i + 1).padStart(2, "0")} />
+              ))}
           </section>
         )}
         <Queue beds={beds} now={now} onOpen={(b) => setOpenKey(b.key)} selectedId={openKey} />
       </main>
+
+      <footer className="foot">
+        <span>Research prototype. Not for clinical use.</span>
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
+        <span className="foot__credit">
+          Data: PhysioNet/CinC Challenge 2015 (ODC-By). Type: Ronzino and Coconat by Collletttivo (OFL).
+        </span>
+      </footer>
 
       {showCard && <ModelCard card={card} onClose={() => setShowCard(false)} />}
     </div>
